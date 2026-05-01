@@ -1,0 +1,16 @@
+/* Tente cada um desses */
+.login-logo img {
+    max-height: 150px !important;
+    width: auto !important;
+}
+
+img.logo {
+    max-height: 150px !important;
+    width: auto !important;
+}
+
+/* Força em qualquer imagem da tela de login */
+body.login img {
+    max-height: 150px !important;
+    width: auto !important;
+}
