@@ -1,12 +1,13 @@
 from django.db import models
 from customers.models import Customer
 
+
 class Vehicle_Type(models.Model):
     name = models.CharField(
         max_length=100,
         unique=True,
         verbose_name='Tipo de veiculo')
-    
+
     description = models.TextField(
         blank=True,
         null=True,
@@ -19,10 +20,11 @@ class Vehicle_Type(models.Model):
     class Meta:
         verbose_name = 'Tipo de Veiculo'
         verbose_name_plural = 'Tipos de Veiculos'
-    
+
     def __str__(self):
         return self.name
-    
+
+
 class Vehicle(models.Model):
     vehicle_type = models.ForeignKey(
         Vehicle_Type,
@@ -39,7 +41,7 @@ class Vehicle(models.Model):
         verbose_name='Placa'
     )
 
-    brand = models.CharField( #podemos criar uma tabela de marcas e relacionar aqui, mas para simplificar, deixaremos como texto
+    brand = models.CharField(  # podemos criar uma tabela de marcas e relacionar aqui, mas para simplificar, deixaremos como texto
         max_length=100,
         blank=True,
         null=True,

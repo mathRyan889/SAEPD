@@ -7,6 +7,7 @@ class VehicleTypeSerializer(serializers.ModelSerializer):
         model = Vehicle_Type
         fields = '__all__'
 
+
 class VehicleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vehicle

@@ -2,6 +2,7 @@ from django.db import models
 
 from vehicles.models import Vehicle
 
+
 class ParkingSpot(models.Model):
     spot_number = models.CharField(
         max_length=10,
@@ -28,7 +29,8 @@ class ParkingSpot(models.Model):
 
     def __str__(self):
         return self.spot_number
-    
+
+
 class ParkingRecord(models.Model):
     vehicle = models.ForeignKey(
         Vehicle,
@@ -45,7 +47,7 @@ class ParkingRecord(models.Model):
     entry_time = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Horario de entrada"
-        )
+    )
     exit_time = models.DateTimeField(
         null=True,
         blank=True,
@@ -67,5 +69,3 @@ class ParkingRecord(models.Model):
 
     def __str__(self):
         return f"{self.vehicle} - {self.parkingspot} - {self.entry_time}"
-    
-    

@@ -2,15 +2,17 @@ from django.contrib import admin
 
 from .models import ParkingSpot, ParkingRecord
 
+
 @admin.register(ParkingSpot)
 class ParkingSpotAdmin(admin.ModelAdmin):
     list_display = ['spot_number', 'is_occupied', 'created_at']
     search_fields = ['spot_number']
     list_filter = ['is_occupied']
 
+
 @admin.register(ParkingRecord)
 class ParkingRecordAdmin(admin.ModelAdmin):
-    list_display = ['vehicle','parkingspot', 'entry_time', 'exit_time', 'created_at']
+    list_display = ['vehicle', 'parkingspot', 'entry_time', 'exit_time', 'created_at']
     search_fields = ['vehicle__license_plate', 'parkingspot__spot_number']
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):

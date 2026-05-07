@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Customer(models.Model):
     user = models.OneToOneField(
-         User,
+        User,
         on_delete=models.PROTECT,
         blank=True,
         null=True,
@@ -12,9 +12,9 @@ class Customer(models.Model):
         verbose_name='Cliente'
     )
     name = models.CharField(max_length=100, verbose_name='Nome')
-    cpf = models.CharField(max_length=15, 
-                           blank=True, 
-                           null=True, 
+    cpf = models.CharField(max_length=15,
+                           blank=True,
+                           null=True,
                            verbose_name='CPF')
     phone = models.CharField(max_length=15, verbose_name='Telefone')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Criado em')
@@ -23,8 +23,6 @@ class Customer(models.Model):
     class Meta:
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
+
     def __str__(self):
         return self.name
-    
-
-

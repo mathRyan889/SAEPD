@@ -2,15 +2,15 @@ from django.contrib import admin
 
 from .models import Vehicle_Type, Vehicle
 
+
 @admin.register(Vehicle_Type)
 class VehicleTypeAdmin(admin.ModelAdmin):
-    list_display =['name', 'description']
+    list_display = ['name', 'description']
     search_fields = ['name']
+
 
 @admin.register(Vehicle)
 class VehicleAdmin(admin.ModelAdmin):
-    list_display =  ['license_plate','brand','model','color','vehicle_type']
+    list_display = ['license_plate', 'brand', 'model', 'color', 'vehicle_type']
     search_fields = ['license_plate', 'model']
     list_filter = ['vehicle_type']
-
-
